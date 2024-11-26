@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package grpc_receive;
+
+service GRPCReceiveService {
+  rpc TestMethod (TestMethodRequest) returns (TestMethodResponse) {};
+  rpc TestMethodWithKafka (TestMethodRequest) returns (TestMethodResponse) {};
+}
+
+message TestMethodRequest {
+  int32 numberInput = 1;
+  string stringInput = 2;
+  bool boolInput = 3;
+  optional string optionalParam = 4;
+}
+
+message TestMethodResponse {
+  int32 numberResponse = 1;
+  string stringResponse = 2;
+  bool boolResponse = 3;
+  optional string optionalResponse = 4;
+}
